@@ -47,7 +47,7 @@ function wekaOBJ = convertWekaDataset(name, featureNames, data, targetIndex)
     wekaOBJ = Instances(name,vec,size(data,1));
     if(iscell(data))
         for i=1:size(data,1)
-            inst = DenseInstance(numel(featureNames));
+            inst = Instance(numel(featureNames));
             for j=0:numel(featureNames)-1
                inst.setDataset(wekaOBJ);
                inst.setValue(j,data{i,j+1});
@@ -56,7 +56,7 @@ function wekaOBJ = convertWekaDataset(name, featureNames, data, targetIndex)
         end
     else
         for i=1:size(data,1)
-            wekaOBJ.add(DenseInstance(1,data(i,:)));
+            wekaOBJ.add(Instance(1,data(i,:)));
         end
     end
     wekaOBJ.setClassIndex(targetIndex-1);

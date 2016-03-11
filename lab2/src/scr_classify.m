@@ -33,7 +33,7 @@ end
 
 %converting data to weka
 %javaaddpath('/usr/share/java/weka.jar');
-javaaddpath('C:/Program Files/Weka-3-7/weka.jar');
+javaaddpath('/home/daudt/Documents/S2/SSI/weka-3-6-13/weka.jar');
 import weka.*;
 
 %each feature needs a name
