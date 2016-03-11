@@ -13,7 +13,7 @@ hand_im = imread(hand_dir);
 mosaic_im = imread(mosaic_dir);
 pingpong_im = imread(pingpong_dir);
 
-im_orig = pingpong_im;
+im_orig = feli_im;
 im = rgb2gray(im_orig);
 
 
