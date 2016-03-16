@@ -10,6 +10,10 @@
 % It returns the confusion matrix (for a perfect classifier, numbers  
 % should only be in the diagonal), and the % of correct classification.
 
+clear all
+close all
+clc
+
 dataDir = 'P2_class/';
 d = dir([dataDir 't*']);
 
