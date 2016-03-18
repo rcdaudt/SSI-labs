@@ -13,9 +13,9 @@ hand_im = imread(hand_dir);
 mosaic_im = imread(mosaic_dir);
 pingpong_im = imread(pingpong_dir);
 %%
-im_orig = hand_im;
+im_orig = feli_im;
 im = rgb2gray(im_orig);
-% im = imsharpen(im);
+im = imsharpen(im);
 
 
 [height,width] = size(im);
@@ -53,7 +53,7 @@ for i = 1 : 7
     im_ct(:,:,i) = (im_ct(:,:,i) - minval)./maxval;
 end
 % Segment
-im_plot = seg(im_ct(:,:,1:7),[1 1],0.25);
+im_plot = seg(im_ct(:,:,3:6),[1 1],0.2);
 
 % Plot
 figure;

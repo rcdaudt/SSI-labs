@@ -27,8 +27,10 @@ function im_label = seg(im,p,delta)
                 % Make sure the neighborhood is valid and not labeled
                 if p_neighbor(1) >= 1 && p_neighbor(2) >=1 && p_neighbor(1) <= height && p_neighbor(2) <= width && im_label(p_neighbor(1),p_neighbor(2)) ==0
                     for j = 1 : z
-                        Error = Error + abs(im(p_neighbor(1), p_neighbor(2), j) - R_mean(j));
+                        Error = Error + abs(im(p_neighbor(1),p_neighbor(2), j) - R_mean(j)); % Absolute sum
+%                          Error = Error + (im(p_neighbor(1), p_neighbor(2), j) - R_mean(j)).^2; 
                     end
+%                     Error = sqrt(Error); % Euclidean distance
                     if Error <= delta
                         %give label
                         im_label(p_neighbor(1),p_neighbor(2)) = R_label; 
