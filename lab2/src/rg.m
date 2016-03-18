@@ -1,6 +1,6 @@
 function final = rg(image, delta_in)
 % Image segmentation by Region Growing
-    
+    image = double(image);
     % Image size
     s = size(image);
     s(3) = size(image,3); % Force a third dimensional measurement

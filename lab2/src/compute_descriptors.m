@@ -1,4 +1,4 @@
-function desc = compute_descriptors(image,n)
+function desc = compute_descriptors(image,n,dir)
     % Compute texture descriptors for each pixel of image using
     % (2n+1)x(2n+1) windows
     
@@ -6,6 +6,8 @@ function desc = compute_descriptors(image,n)
     if size(image,3) > 1,
         image = rgb2gray(image);
     end
+    
+    image = adapthisteq(image);
     
     % Get size
     s = size(image);
@@ -24,7 +26,7 @@ function desc = compute_descriptors(image,n)
             col_to = min(s(2),col+n);
 
             % Get glcm and properties in window
-            glcm = graycomatrix(image(row_from:row_to,col_from:col_to));
+            glcm = graycomatrix(image(row_from:row_to,col_from:col_to),'Offset',dir);
             props = graycoprops(glcm);
 
             % Store calculated values
