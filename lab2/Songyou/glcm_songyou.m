@@ -26,7 +26,7 @@ hm = floor(mask_size/2); % Half of mask size
 for h = hm + 1 : height - hm
     for w = hm + 1 : width - hm
         mask_im = im(h-hm:h+hm,w-hm:w+hm);% Acquire 11*11 neighborhood
-        glcm = graycomatrix(mask_im, 'Offset',[0 1],'Symmetric',true);% Compute GLCM matrix of current pixel
+        glcm = graycomatrix(mask_im, 'Offset',[1 1],'Symmetric',true);% Compute GLCM matrix of current pixel
         stats = graycoprops(glcm); % Compute properties 
         stats_im(h,w,1) = stats.Contrast;
         stats_im(h,w,2) = stats.Correlation;
@@ -64,9 +64,9 @@ for i = 1 : 7
     im_ct(:,:,i) = (im_ct(:,:,i) - minval)./maxval;
 end
 % Segment
-im_plot = seg(im_ct(:,:,1:7),[1 1],0.25);
+im_plot = seg(im_ct(:,:,1:5),[1 1],0.25);
 
 % Plot
 figure;
 imshow(im_plot,[]);
-colormap jet;
+colormap colorcube;
