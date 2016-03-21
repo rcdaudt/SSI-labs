@@ -49,7 +49,7 @@ end
 
 
 %converting data to weka
-javaaddpath('/Users/Songyou/Documents/VIBOT/UdG/SSI/Lab/Lab2/weka-3-6-13/weka.jar');
+javaaddpath('/home/daudt/Documents/S2/SSI/weka-3-6-13/weka.jar');
 % javaaddpath('/usr/share/java/weka.jar');
 % javaaddpath('C:/Program Files/Weka-3-7/weka.jar');
 import weka.*;

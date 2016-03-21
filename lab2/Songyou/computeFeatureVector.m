@@ -10,12 +10,7 @@ if size(A,3) > 1,
 	A = rgb2gray(A);
 end
 
-% Things I can check
-% 1. symmetric true false
-% 2. 
 
-% direc = [0 12;-12 12; -12 0; -12 -12]; % Different directions for glcm
-% direc = [0 1;-1 1; -1 0; -1 -1;0 2;-2 2; -2 0; -2 -2];% 85 percent
 direc = [0 1;-1 1; -1 0; -1 -1;0 12;-12 12; -12 0; -12 -12;0 23;-23 23; -23 0; -23 -23];% Good one
 
 v = zeros(1, size(direc,1)*4);

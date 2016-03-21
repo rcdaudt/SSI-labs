@@ -30,7 +30,8 @@ end
 feli_seg = rg(min(feli_desc,1),0.3);
 figure;
 imagesc(feli_seg);
-colormap(colorcube);
+colormap(jet);
+% imwrite(255*(feli_seg-1)/(max(max(feli_seg))-1),jet(256),'feli_seg.png');
 display('feli_seg done');
 
 
@@ -46,7 +47,7 @@ for i = 1:3
     subplot(3,1,i);
     imshow(hand_desc(:,:,i));
 end
-%%
+
 % Segment image
 hand_prep = cat(3,hand,min(1.5*hand_desc,1));
 for i = 1:size(hand_prep,3)
@@ -55,7 +56,8 @@ end
 hand_seg = rg(hand_prep,0.08);
 figure;
 imagesc(hand_seg);
-colormap(colorcube);
+colormap(jet);
+% imwrite(255*(hand_seg-1)/(max(max(hand_seg))-1),jet(256),'hand_seg.png');
 display('hand_seg done');
 
 
@@ -91,7 +93,8 @@ end
 mosaic_seg = rg(mosaic_prep,0.1);
 figure;
 imagesc(mosaic_seg);
-colormap(colorcube);
+colormap(jet);
+% imwrite(255*(mosaic_seg-1)/(max(max(mosaic_seg))-1),jet(256),'mosaic_seg.png');
 display('mosaic_seg done');
 
 
@@ -120,42 +123,6 @@ end
 pingpong_seg = rg(pingpong_prep,0.18);
 figure;
 imagesc(pingpong_seg);
-colormap(colorcube);
+colormap(jet);
+% imwrite(255*(pingpong_seg-1)/(max(max(pingpong_seg))-1),jet(256),'pingpong_seg.png');
 display('pingpong_seg done');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -6,9 +6,9 @@ function v = computeFeatureVector(A)
 % image
 %
 
-% r = mean(mean(A(:,:,1)));
-% g = mean(mean(A(:,:,2)));
-% b = mean(mean(A(:,:,3)));
+r = mean(mean(A(:,:,1)));
+g = mean(mean(A(:,:,2)));
+b = mean(mean(A(:,:,3)));
 
 if size(A,3) > 1,
 	A = rgb2gray(A);
@@ -26,5 +26,5 @@ for i = 1:size(offsets,1)
     v((4*i-3):4*i) = [desc1.Contrast desc1.Correlation desc1.Energy desc1.Homogeneity];
 end
 
-v = v/mean(mean(A));
-% v = [r g b v]/mean(mean(A));
+% v = v/mean(mean(A));
+v = [r g b v]/mean(mean(A));
